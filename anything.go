@@ -3,15 +3,17 @@ package main
 import "fmt"
 
 func main() {
-	fmt.Println("First programme")
-	foo()
-	fmt.Println("something more")
-	for i := 0; i < 100; i++ {
-		if i%2 == 0 {
-			fmt.Println(i)
-		}
-	}
-	bar()
+	n, e := fmt.Println("First programme", 12, true)
+	//foo()
+	//fmt.Println("something more")
+	//for i := 0; i < 100; i++ {
+	//	if i%2 == 0 {
+	//		fmt.Println(i)
+	//	}
+	//}
+	//bar()
+	fmt.Println(n)
+	fmt.Println(e)
 }
 
 func foo() {
