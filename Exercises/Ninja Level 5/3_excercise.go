@@ -15,7 +15,7 @@ type sedan struct {
 	vehicle
 	luxury bool
 }
-
+//Embedded structs
 func main() {
 	t := truck{
 		vehicle: vehicle{
