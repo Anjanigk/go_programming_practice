@@ -21,6 +21,13 @@ func (s square) area() float64 {
 	return s.length * s.length
 }
 
+type shape interface {
+	area() float64
+}
+
+func info(s shape) {
+	fmt.Println("The area is", s.area())
+}
 func main() {
 	cir := circle{
 		10,
@@ -28,6 +35,7 @@ func main() {
 	sq := square{
 		10,
 	}
-	fmt.Println(cir.area())
-	fmt.Println(sq.area())
+	info(cir)
+	info(sq)
+	
 }
