@@ -6,9 +6,9 @@ import (
 )
 
 type person struct {
-	First string
-	Last string
-	Age int
+	First   string
+	Last    string
+	Age     int
 	Sayings []string
 }
 
@@ -17,16 +17,16 @@ func main() {
 	//p := []person{}
 	var p []person
 	err := json.Unmarshal([]byte(s), &p)
-	if err != nil{
+	if err != nil {
 		fmt.Println(err)
 	}
 	//fmt.Println(p)
 
-	for i , v := range p {
+	for i, v := range p {
 		fmt.Println("Person #", i)
-		fmt.Println("\t",v.First,v.Last,v.Age)
-		for _ , s := range v.Sayings{
-			fmt.Println("\t\t",s)
+		fmt.Println("\t", v.First, v.Last, v.Age)
+		for _, s := range v.Sayings {
+			fmt.Println("\t\t", s)
 		}
 	}
 

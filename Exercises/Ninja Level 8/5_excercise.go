@@ -11,18 +11,19 @@ type user struct {
 	Age     int
 	Sayings []string
 }
+
 //to sort by age
 type ByAge []user
 
-func (a ByAge) Len() int { return len(a)}
-func (a ByAge) Swap(i, j int) { a[i], a[j] = a[j] , a[i] }
+func (a ByAge) Len() int           { return len(a) }
+func (a ByAge) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByAge) Less(i, j int) bool { return a[i].Age < a[j].Age }
 
 //to sort by last
 type ByLast []user
 
-func (a ByLast) Len() int { return len(a)}
-func (a ByLast) Swap(i, j int) { a[i], a[j] = a[j] , a[i] }
+func (a ByLast) Len() int           { return len(a) }
+func (a ByLast) Swap(i, j int)      { a[i], a[j] = a[j], a[i] }
 func (a ByLast) Less(i, j int) bool { return a[i].Last < a[j].Last }
 
 func main() {
@@ -60,31 +61,30 @@ func main() {
 	}
 
 	users := []user{u1, u2, u3}
-	for _ , u := range users {
-		fmt.Println (u.First, u.Last, u.Age)
+	for _, u := range users {
+		fmt.Println(u.First, u.Last, u.Age)
 		sort.Strings(u.Sayings)
-		for _ , s := range u.Sayings {
-			fmt.Println ("\t", s)
+		for _, s := range u.Sayings {
+			fmt.Println("\t", s)
 		}
 	}
 
-	
 	sort.Sort(ByAge(users)) //sort by age
 	fmt.Println("************Sorted by Age***********")
-	for _ , u := range users {
-		fmt.Println (u.First, u.Last, u.Age)
+	for _, u := range users {
+		fmt.Println(u.First, u.Last, u.Age)
 		sort.Strings(u.Sayings)
-		for _ , s := range u.Sayings {
-			fmt.Println ("\t", s)
+		for _, s := range u.Sayings {
+			fmt.Println("\t", s)
 		}
 	}
 	sort.Sort(ByLast(users)) //sort by last
-  fmt.Println("************Sorted by Last name***********")
-	for _ , u := range users {
-		fmt.Println (u.First, u.Last, u.Age)
+	fmt.Println("************Sorted by Last name***********")
+	for _, u := range users {
+		fmt.Println(u.First, u.Last, u.Age)
 		sort.Strings(u.Sayings)
-		for _ , s := range u.Sayings {
-			fmt.Println ("\t", s)
+		for _, s := range u.Sayings {
+			fmt.Println("\t", s)
 		}
 	}
 
