@@ -8,11 +8,12 @@ const(
 	c = 2022 + iota
 	d = 2022 + iota
 )
-
+const e int = 2022 + iota
 func main() {
   fmt.Println(a)
   fmt.Println(b)
   fmt.Println(c)
   fmt.Println(d)
+  fmt.Println(e)
 }
 
